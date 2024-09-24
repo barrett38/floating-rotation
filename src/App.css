@@ -4,34 +4,95 @@
   justify-content: center;
   align-items: center;
   background-color: #282c34;
-  perspective: 1000px; /* Depth perspective */
 }
 
 .floating-object {
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle at 30% 30%, #ffffff, #0077ff, #001f3f);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 30% 30%, #ffffff, blue);
   border-radius: 50%;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  animation: float 30s ease-in-out infinite, rotate 15s linear infinite,
+    changeColor 20s linear infinite;
+  transition: 4s ease-in-out;
+}
 
-  /* Keep only the color fading animation */
-  animation: changeColor 12s ease-in-out infinite;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes changeColor {
   0% {
-    background: radial-gradient(circle at 30% 30%, #ffffff, #0077ff, #001f3f);
+    background: radial-gradient(circle at 30% 30%, #ffffff, black);
   }
-  25% {
-    background: radial-gradient(circle at 30% 30%, #ffffff, #ff00ff, #3f001f);
+  10% {
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff,
+      black
+    ); /* Reflection */
+  }
+  20% {
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff,
+      black
+    ); /* Melancholy */
+  }
+  30% {
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff,
+      black
+    ); /* Contentment */
+  }
+  40% {
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff,
+      black
+    ); /* Excitement */
   }
   50% {
-    background: radial-gradient(circle at 30% 30%, #ffffff, #ff0000, #3f001f);
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff,
+      black
+    ); /* Frustration */
   }
-  75% {
-    background: radial-gradient(circle at 30% 30%, #ffffff, #ffff00, #3f3f00);
+  60% {
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff,
+      black
+    ); /* Determination */
+  }
+  70% {
+    background: radial-gradient(circle at 30% 30%, #ffffff, black); /* Joy */
+  }
+  80% {
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff,
+      black
+    ); /* Calm after the Storm */
   }
   100% {
-    background: radial-gradient(circle at 30% 30%, #ffffff, #0077ff, #001f3f);
+    background: radial-gradient(circle at 30% 30%, #ffffff, black); /* Peace */
   }
 }
