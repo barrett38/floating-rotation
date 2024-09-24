@@ -13,8 +13,9 @@
   border-radius: 50%;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
   animation: float 30s ease-in-out infinite, rotate 15s linear infinite,
-    changeColor 20s linear infinite;
+    changeColor 20s linear infinite, fadeIn 2s ease-in-out forwards;
   transition: 4s ease-in-out;
+  opacity: 0; /* Initial opacity for fade-in effect */
 }
 
 @keyframes float {
@@ -40,61 +41,17 @@
   0% {
     background: radial-gradient(circle at 30% 30%, #ffffff, black);
   }
-  10% {
-    background: radial-gradient(
-      circle at 30% 30%,
-      #ffffff,
-      black
-    ); /* Reflection */
-  }
-  20% {
-    background: radial-gradient(
-      circle at 30% 30%,
-      #ffffff,
-      black
-    ); /* Melancholy */
-  }
-  30% {
-    background: radial-gradient(
-      circle at 30% 30%,
-      #ffffff,
-      black
-    ); /* Contentment */
-  }
-  40% {
-    background: radial-gradient(
-      circle at 30% 30%,
-      #ffffff,
-      black
-    ); /* Excitement */
-  }
-  50% {
-    background: radial-gradient(
-      circle at 30% 30%,
-      #ffffff,
-      black
-    ); /* Frustration */
-  }
-  60% {
-    background: radial-gradient(
-      circle at 30% 30%,
-      #ffffff,
-      black
-    ); /* Determination */
-  }
-  70% {
-    background: radial-gradient(circle at 30% 30%, #ffffff, black); /* Joy */
-  }
-  80% {
-    background: radial-gradient(
-      circle at 30% 30%,
-      #ffffff,
-      black
-    ); /* Calm after the Storm */
-  }
+
   100% {
     background: radial-gradient(circle at 30% 30%, #ffffff, black); /* Peace */
   }
 }
 
-/* Saving */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
