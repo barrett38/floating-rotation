@@ -2,11 +2,12 @@ require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
 const fs = require("fs");
+const path = require("path");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const COLOR_FILE = "colorData.json";
+const COLOR_FILE = path.join(__dirname, "colorData.json");
 
 app.get("/fetch-color", async (req, res) => {
   try {

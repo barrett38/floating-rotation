@@ -1,0 +1,22 @@
+[
+  {
+    "mood": "Happy",
+    "color": "#FFFF00"
+  },
+  {
+    "mood": "Sad",
+    "color": "#0000FF"
+  },
+  {
+    "mood": "Angry",
+    "color": "#FF0000"
+  },
+  {
+    "mood": "Relaxed",
+    "color": "#00FF00"
+  },
+  {
+    "mood": "Excited",
+    "color": "#FFA500"
+  }
+]
